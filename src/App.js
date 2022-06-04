@@ -7,27 +7,13 @@ import cartItems from "./cart-items";
 // redux stuff
 import { legacy_createStore as createStore } from "redux";
 import { DECREASE, INCREASE } from "./actions";
+import reducer from "./reducer";
 
 //initial store
 const initialStore = {
   count: 0,
   name: "praveen",
 };
-
-//reducer function
-function reducer(state, action) {
-  console.log({ state, action });
-
-  if (action.type === DECREASE) {
-    return { ...state, count: state.count - 1 };
-  }
-
-  if (action.type === INCREASE) {
-    return { ...state, count: state.count + 1 };
-  }
-
-  return state;
-}
 
 const store = createStore(reducer, initialStore);
 
