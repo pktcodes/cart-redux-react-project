@@ -5,6 +5,14 @@ import CartContainer from "./components/CartContainer";
 // items
 import cartItems from "./cart-items";
 // redux stuff
+import { legacy_createStore as createStore } from "redux";
+
+//reducer function
+function reducer() {
+  console.log("shake and bake");
+}
+
+const store = createStore(reducer);
 
 function App() {
   // cart setup
