@@ -15,12 +15,22 @@ const initialStore = {
 //reducer function
 function reducer(state, action) {
   console.log({ state, action });
+
+  if (action.type === "DECREASE") {
+    return { count: state.count - 1 };
+  }
   return state;
 }
 
 const store = createStore(reducer, initialStore);
 
 //getState - gets the current state
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "DECREASE" });
+
 console.log(store.getState());
 
 function App() {
