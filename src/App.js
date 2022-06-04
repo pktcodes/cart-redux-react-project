@@ -29,7 +29,7 @@ store.dispatch({ type: "DECREASE" });
 store.dispatch({ type: "DECREASE" });
 store.dispatch({ type: "DECREASE" });
 store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "INCREASE" });
 
 console.log(store.getState());
 
