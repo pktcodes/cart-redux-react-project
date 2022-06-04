@@ -7,12 +7,18 @@ import cartItems from "./cart-items";
 // redux stuff
 import { legacy_createStore as createStore } from "redux";
 
+//initial store
+const initialStore = {
+  count: 0,
+};
+
 //reducer function
-function reducer() {
-  console.log("shake and bake");
+function reducer(state, action) {
+  console.log({ state, action });
+  return state;
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, initialStore);
 
 function App() {
   // cart setup
