@@ -9,10 +9,10 @@ import { legacy_createStore as createStore } from "redux";
 import reducer from "./reducer";
 import { Provider } from "react-redux";
 
-//initial store
+//initial store - redux store
 const initialStore = {
   cart: cartItems,
-  total: 0,
+  total: 105,
   amount: 5,
 };
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <Provider store={store}>
       <Navbar />
-      <CartContainer cart={cartItems} />
+      <CartContainer />
     </Provider>
   );
 }
