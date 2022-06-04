@@ -13,6 +13,15 @@ function reducer(state, action) {
     return { ...state, cart: [] };
   }
   return state;
+
+  //   ================Switch Statement===============
+  //   switch (action.type) {
+  //     case CLEAR_CART:
+  //       return { ...state, cart: [] };
+  //     default:
+  //       return state;
+  //   }
+  //   ===============================================
 }
 
 export default reducer;
