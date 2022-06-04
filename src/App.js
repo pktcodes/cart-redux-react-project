@@ -7,6 +7,7 @@ import cartItems from "./cart-items";
 // redux stuff
 import { legacy_createStore as createStore } from "redux";
 import reducer from "./reducer";
+import { Provider } from "react-redux";
 
 //initial store
 const initialStore = {
@@ -21,10 +22,10 @@ function App() {
   // cart setup
 
   return (
-    <main>
+    <Provider store={store}>
       <Navbar />
       <CartContainer cart={cartItems} />
-    </main>
+    </Provider>
   );
 }
 
