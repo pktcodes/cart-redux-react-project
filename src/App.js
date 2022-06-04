@@ -19,6 +19,14 @@ function reducer(state, action) {
   if (action.type === "DECREASE") {
     return { count: state.count - 1 };
   }
+
+  if (action.type === "INCREASE") {
+    return { count: state.count + 1 };
+  }
+
+  if (action.type === "RESET") {
+    return { count: 0 };
+  }
   return state;
 }
 
@@ -26,10 +34,9 @@ const store = createStore(reducer, initialStore);
 
 //getState - gets the current state
 store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "DECREASE" });
-store.dispatch({ type: "DECREASE" });
+store.dispatch({ type: "RANDOM" });
 store.dispatch({ type: "INCREASE" });
+store.dispatch({ type: "RESET" });
 
 console.log(store.getState());
 
