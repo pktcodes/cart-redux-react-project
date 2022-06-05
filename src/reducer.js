@@ -7,6 +7,15 @@ function reducer(state, action) {
 
   if (action.type === INCREASE) {
     console.log("You have increased the amount");
+    const tempCart = state.cart.map((cartItem) => {
+      if (cartItem.id === action.payload.id) {
+        cartItem = { ...cartItem, amount: cartItem.amount + 1 };
+        return cartItem;
+      }
+      return cartItem;
+    });
+    console.log(tempCart);
+    return { ...state, cart: tempCart };
   }
 
   if (action.type === REMOVE) {
