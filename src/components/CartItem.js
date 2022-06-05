@@ -39,9 +39,10 @@ const CartItem = ({ img, title, price, amount, remove }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { id } = ownProps;
   return {
-    remove: () => dispatch({ type: REMOVE }),
+    remove: () => dispatch({ type: REMOVE, payload: { id: id } }),
   };
 };
 

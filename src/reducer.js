@@ -10,7 +10,12 @@ function reducer(state, action) {
   }
 
   if (action.type === REMOVE) {
-    console.log("You have removed the item");
+    return {
+      ...state,
+      cart: state.cart.filter((cartItem) => {
+        return cartItem.id !== action.payload.id;
+      }),
+    };
   }
 
   if (action.type === CLEAR_CART) {
