@@ -49,7 +49,11 @@ const CartItem = ({
         <button
           className="amount-btn"
           onClick={() => {
-            decrease();
+            if (amount === 1) {
+              return remove();
+            } else {
+              decrease();
+            }
           }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
