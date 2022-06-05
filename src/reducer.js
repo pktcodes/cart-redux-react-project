@@ -7,7 +7,16 @@ import {
   TOGGLE_AMOUNT,
 } from "./actions";
 
-function reducer(state, action) {
+import cartItems from "./cart-items";
+
+//initial store - redux store
+const initialStore = {
+  cart: cartItems,
+  total: 105,
+  amount: 5,
+};
+
+function reducer(state = initialStore, action) {
   if (action.type === DECREASE) {
     let tempCart = state.cart.map((cartItem) => {
       if (cartItem.id === action.payload.id) {
